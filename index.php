@@ -21,15 +21,19 @@
 <body>
 
   <main>
+    <h1>Jeux du pendu</h1>
     <?php
     
-    $alphabet = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
-    $mot = 'bonjour';
-    $_SESSION['lenght'] = strlen($mot);
-    // echo $_SESSION['lenght'];
+    session_start();
 
-    for ($i=0; $i<$_SESSION['lenght']; $i++) {
+    $alphabet = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+    $_SESSION['mot'] = 'bonjour';
+    // $mot = substr($_SESSION['mot'], 0, 3);
+    // echo $mot;
+
+    for ($i=0; $i<strlen($_SESSION['mot']); $i++) {
         echo '_' . ' ';
+        $_SESSION['try'][$i] = '_';
     }
 
     echo '<form method="post">';
@@ -46,22 +50,22 @@
         'played' => []
     ];
 
-
-
-    for ($i=0; isset($mot[$i]); $i++) {
+ 
+    for ($i=0; isset($_SESSION['mot'][$i]); $i++) {
         foreach ($_POST as $letter) {
-            if ($mot[$i] == $letter) {
+            if ($_SESSION['mot'][$i] == $letter) {
                 $played['played'][] = $letter;
+                // echo $played['played'];
             }
         }
     }
     // var_dump($_SESSION['played']);
-    var_dump($played['played']);
+    // echo json_encode($played);
     
 
 
     ?>
-    <h1>Jeux du pendu</h1>
+    
   </main>
 
 </body>
