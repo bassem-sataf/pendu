@@ -88,12 +88,12 @@ class Pendu{
 
             echo "<img src='./assets/pendu-accueil.png'>";
             echo "<a class='continuer' href='./index.php?etat=jouer'>Continuer</a>";  
-            echo "<a class='nouvelleP' href='./NouvPartie'>Nouvelle partie</a>";  
+            echo "<a class='nouvelleP' href='./NouvPartie.php'>Nouvelle partie</a>";  
         }
         else{
             echo "<p class='bienvenue'> Bienvenue sur le jeu du Pendu Faites une partie :</p>";
             echo "<img class='img-bienvenue' src='./assets/pendu-accueil.png'>";
-            echo "<a class='nouvelleP' href='./NouvPartie'>Nouvelle partie</a>";  
+            echo "<a class='nouvelleP' href='./NouvPartie.php'>Nouvelle partie</a>";  
         }
     }
 
