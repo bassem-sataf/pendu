@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-bonjour
-hello
-=======
 aurevoir 
 bonjour 
 salutation 
@@ -31,4 +27,3 @@ marseille
 clavier
 souris
 tarik
->>>>>>> 124c4454ea78196d4bf41feafbe9b6936ed686c4

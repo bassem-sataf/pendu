@@ -8,48 +8,6 @@
     <link rel="stylesheet" href="./pendu.css">
 </head>
 <body>
-<<<<<<< HEAD
-
-  <main>
-    <h1>Jeux du pendu</h1>
-
-    <?php
-
-    session_start();
-    $_SESSION['mot'] = 'aurevoir';  
-    $played = [];
-    // $alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    $alphabet = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
-
-    
-    
-    echo '<form method="post">';
-    
-    for ($j=0; isset($alphabet[$j]); $j++) {
-         if (!isset($_POST[$alphabet[$j]])) {
-             $input = '<input type="submit" name="'.$alphabet[$j].'" value="'.$alphabet[$j].'">' . ' ';
-             echo $input;
-         } else {
-             $_SESSION['letter'] = $_SESSION['letter'].$_POST[$alphabet[$j]];
-             echo ' ' . $alphabet[$j] . ' ';
-             $played[] = $_SESSION['letter'];
-         }
-    }
-
-    echo '</form>';
-    var_dump($played);
-    
-    $trueLetter = [];
-
-    for ($k=0; isset($_SESSION['mot'][$k]); $k++) {
-        foreach ($alphabet as $letter) {
-            if ($_SESSION['mot'][$k] == $letter) {
-                $trueLetter[] = $_SESSION['mot'][$k];
-        } 
-    }
-}
-
-=======
     <?php
     include('./header.php');
     ?>
@@ -73,7 +31,6 @@
             if(!isset($_SESSION['victoires'])){
                 $_SESSION['victoires'] = 0;
             }
->>>>>>> 124c4454ea78196d4bf41feafbe9b6936ed686c4
 
             if(!empty($_GET) && $_GET['etat']=='jouer')
             {    
@@ -88,15 +45,6 @@
                     echo '<form class="form" method="post">';
                         $pendu->affichageInput($alphabet);
                     echo '</form>';
-
-<<<<<<< HEAD
-    echo '<br/>';
-    var_dump($trueLetter);
-    
-  ?>
-
-  </main>
-=======
                     echo "<div class='droite'>";
                         echo "<div class='tirets'>";
                             $pendu->affichageLettres($mot);
@@ -119,8 +67,6 @@
                 echo "<p class='victoires'> nombre de victoires : $_SESSION[victoires]</p>";
                 echo "<a class='recommencer' href='./Recommencer.php'>Nouveau Mot</a>";
             }
->>>>>>> 124c4454ea78196d4bf41feafbe9b6936ed686c4
-
             elseif(!empty($_GET) && $_GET['etat']=='perdu'){
                 $pendu->partiePerdue($mot);
             }
