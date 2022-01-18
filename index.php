@@ -22,50 +22,50 @@
 
   <main>
     <h1>Jeux du pendu</h1>
+
     <?php
-    
+
     session_start();
-
+    $_SESSION['mot'] = 'aurevoir';  
+    $played = [];
+    // $alphabet = 'abcdefghijklmnopqrstuvwxyz';
     $alphabet = array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
-    $_SESSION['mot'] = 'bonjour';
-    // $mot = substr($_SESSION['mot'], 0, 3);
-    // echo $mot;
 
-    for ($i=0; $i<strlen($_SESSION['mot']); $i++) {
-        echo '_' . ' ';
-        $_SESSION['try'][$i] = '_';
-    }
-
+    
+    
     echo '<form method="post">';
-    foreach ($alphabet as $letter) {
-        if (isset($_POST[$letter])) {
-            echo '';
-        } else {
-        echo '<input type="submit" name="'.$letter.'" value="'.$letter.'">';
-        }
+    
+    for ($j=0; isset($alphabet[$j]); $j++) {
+         if (!isset($_POST[$alphabet[$j]])) {
+             $input = '<input type="submit" name="'.$alphabet[$j].'" value="'.$alphabet[$j].'">' . ' ';
+             echo $input;
+         } else {
+             $_SESSION['letter'] = $_SESSION['letter'].$_POST[$alphabet[$j]];
+             echo ' ' . $alphabet[$j] . ' ';
+             $played[] = $_SESSION['letter'];
+         }
     }
+
     echo '</form>';
+    var_dump($played);
+    
+    $trueLetter = [];
 
-    $played = [
-        'played' => []
-    ];
-
- 
-    for ($i=0; isset($_SESSION['mot'][$i]); $i++) {
-        foreach ($_POST as $letter) {
-            if ($_SESSION['mot'][$i] == $letter) {
-                $played['played'][] = $letter;
-                // echo $played['played'];
-            }
-        }
+    for ($k=0; isset($_SESSION['mot'][$k]); $k++) {
+        foreach ($alphabet as $letter) {
+            if ($_SESSION['mot'][$k] == $letter) {
+                $trueLetter[] = $_SESSION['mot'][$k];
+        } 
     }
-    // var_dump($_SESSION['played']);
-    // echo json_encode($played);
-    
+}
 
 
-    ?>
+
+    echo '<br/>';
+    var_dump($trueLetter);
     
+  ?>
+
   </main>
 
 </body>
