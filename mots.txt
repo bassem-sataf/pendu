@@ -22,3 +22,8 @@ Logiciel
 Tabouret
 Triangle
 Labyrinthe
+laboratoire
+marseille
+clavier
+souris
+tarik
