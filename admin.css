@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Ribeye&family=Righteous&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 25px;
+    background-color: #08428c;
+    list-style: none;
+  }
+  nav a {
+    color: #8dd7e8;
+    text-decoration: none;
+    font-family: "Righteous", cursive;
+    font-size: 2em;
+    transition-duration: 0.3s;
+  }
+  nav a:hover{
+      color: grey;
+  }
+
+.admin{
+    position: absolute;
+    left: 20px;
+    font-size: 0.9rem;
+}
+
+#Ajoutmot{
+    padding: 10px 18px;
+    text-align: center;
+}
+
+.mots{
+    margin-left: 15px;
+    font-size: 1.2rem;
+  font-family: "Righteous", cursive;
+}
+form{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}

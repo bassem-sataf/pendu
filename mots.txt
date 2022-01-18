@@ -1,2 +1,34 @@
+<<<<<<< HEAD
 bonjour
 hello
+=======
+aurevoir 
+bonjour 
+salutation 
+fraise 
+framboise
+Ski
+Boxe
+Thym
+Ours
+Route
+Texte
+Agneau
+Alarme
+Billet
+Boucle
+Crayon
+Garage
+Menthe
+Journal
+Batterie
+Logiciel
+Tabouret
+Triangle
+Labyrinthe
+laboratoire
+marseille
+clavier
+souris
+tarik
+>>>>>>> 124c4454ea78196d4bf41feafbe9b6936ed686c4
